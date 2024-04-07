@@ -1,2 +1,6 @@
 # <a href="javascript:alert('XSS Attack!');">Click me</a>
-<a href=<script>alert('XSS Attack!');</script>clickme</a></button>
+<div id="injected-content" style="display:none;"></div>
+<script>
+  document.getElementById("injected-content").innerHTML =
+    "<a href='javascript:alert(\"XSS Attack!\")'>clickme</a>";
+</script>
